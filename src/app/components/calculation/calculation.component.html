@@ -1,0 +1,28 @@
+<section class="calcContainer shadow">
+    <form class="container-fluid ">
+        <div class="row  pl-3">
+            <div class="col-3 pt-5">
+                <!-- <label for="shortside">Short Side</label> -->
+                <!-- We can use the label in the case to be more informative but according reference we don't need to place it -->
+                <input type="number" min="0" class="form-control" name="shortside" id="shortside"
+                    [(ngModel)]="shortside">
+            </div>
+            <div class="col-4 ">
+                <div class="triangle">
+                </div>
+            </div>
+            <div class="col-1 result p-0">{{calculation}}</div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-3 offset-4">
+                <!-- <label for="longside">Long Side</label> -->
+                <input type="number" min="0" class="form-control" name="longside" id="longside" [(ngModel)]="longside">
+            </div>
+        </div>
+        <div class="form-group m-5">
+            <p class="fieldError center" *ngIf="resultError">{{resultError}}</p>
+            <button class="btn btn-primary btn-block " (click)="onCalculate()">Calculate!</button>
+            <button class="btn btn-danger btn-block " (click)="onReset()">Reset</button>
+        </div>
+    </form>
+</section>
